@@ -1,8 +1,0 @@
-{
-  "status": "passed; published and post-publication verified",
-  "runtime_files": 3022,
-  "native_binary_sha256": "3fee3365a759cb7022999121050554be2bff63c86aacb64dac2d41be966cdfa1",
-  "strict_signature": true,
-  "unchanged_icon": true,
-  "only_one_formal_app": true
-}

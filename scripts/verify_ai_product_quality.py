@@ -65,7 +65,7 @@ def main():
             if probe.status_code != 422:
                 raise SystemExit(f"网关版本/凭证检查未通过，HTTP {probe.status_code}；没有发送有效模型请求")
 
-    samples = json.loads((REPO / "docs/verification/ai-product/samples.json").read_text())
+    samples = json.loads((REPO / "scripts/tests/fixtures/ai-product-samples.json").read_text())
     if args.sample_id and not set(args.sample_id).issubset({sample['id'] for sample in samples}):
         raise SystemExit("未知样本编号；未发送有效模型请求")
     report = {"date": datetime.now(timezone.utc).isoformat(), "real_model": args.real,

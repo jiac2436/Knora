@@ -1,6 +1,0 @@
-{
-  "verified": true,
-  "files_and_links": 19870,
-  "manifest_sha256": "deaf913297ab56ff14926a94f4239af6d23aeb5bd0e78c6ea44538632c2fba28",
-  "method": "extract archived runtime and verify content, modes, links and complete file set against separately recorded manifest digest"
-}

@@ -1,7 +1,0 @@
-{
-  "artifact": "pka-runtime-macos-arm64.tar.gz",
-  "sha256": "8d37b750576b0fc32a04de6b9febc2b2683e9ee04e8138fe9e271a4236cca382",
-  "bytes": 356130126,
-  "manifest_sha256": "deaf913297ab56ff14926a94f4239af6d23aeb5bd0e78c6ea44538632c2fba28",
-  "scope": "arm64 L0 runtime payload; not a complete macOS app installer"
-}

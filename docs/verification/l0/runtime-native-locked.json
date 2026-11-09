@@ -1,8 +1,0 @@
-{
-  "native_files": 282,
-  "external_absolute_load_paths": {},
-  "bytes_excluding_symlinks": 968593870,
-  "limits": [
-    "LC_ID_DYLIB excluded; @rpath resolution and signing not verified"
-  ]
-}

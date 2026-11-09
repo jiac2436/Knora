@@ -47,7 +47,7 @@
 <完整App>/Contents/Resources/runtime/python/bin/python3 -I -B \
   scripts/verify_domain_scale.py \
   --runtime '<完整App>/Contents/Resources/runtime' \
-  --output docs/verification/a1/scale-results-YYYYMMDD.json
+  --output apps/macos/.build/scale-results-YYYYMMDD.json
 ```
 
 允许 `--sizes 20 100` 分阶段执行；协议、问题、阈值保持不变。完整交付必须明确哪些规模尚未执行。报告保存协议/脚本/语料/模型/运行时 manifest 的 SHA256、平台与 CPU 数、实际字符数、索引时间、查询样本、每问题召回、通道对照、资源用量及安全断言。输出中无真实凭证/用户数据。临时数据库完成后清理。

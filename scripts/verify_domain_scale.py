@@ -324,7 +324,7 @@ def main():
     runtime = args.runtime.resolve(strict=True)
     model = runtime / 'model/model_optimized.onnx'
     assert model.is_file(), 'bundled BGE model required; downloads forbidden'
-    protocol = Path(__file__).resolve().parents[1] / 'docs/verification/a1/scale-protocol.md'
+    protocol = Path(__file__).resolve().parents[1] / 'scripts/tests/fixtures/domain-scale-protocol.md'
     record = dict(protocol_version=VERSION, protocol_sha256=digest(protocol), script_sha256=digest(__file__),
         frozen_gates=GATES, runtime_manifest_sha256=digest(runtime / 'manifest.json'),
         model_sha256=digest(model), platform=platform.platform(), machine=platform.machine(), cpu_count=os.cpu_count(),
