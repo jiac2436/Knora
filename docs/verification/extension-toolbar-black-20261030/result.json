@@ -1,0 +1,35 @@
+{
+  "version": "0.1.3",
+  "blackBackground": true,
+  "generalIconsUnchanged": true,
+  "results": [
+    {
+      "size": 16,
+      "coloredWidth": 16,
+      "opaquePixels": 244,
+      "blackPixels": 72,
+      "passed": true
+    },
+    {
+      "size": 24,
+      "coloredWidth": 24,
+      "opaquePixels": 544,
+      "blackPixels": 181,
+      "passed": true
+    },
+    {
+      "size": 32,
+      "coloredWidth": 32,
+      "opaquePixels": 976,
+      "blackPixels": 375,
+      "passed": true
+    },
+    {
+      "size": 48,
+      "coloredWidth": 48,
+      "opaquePixels": 2212,
+      "blackPixels": 954,
+      "passed": true
+    }
+  ]
+}

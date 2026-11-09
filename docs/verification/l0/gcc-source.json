@@ -1,0 +1,9 @@
+{
+  "version": "16.2.0",
+  "bottle": {
+    "cellar": "/opt/homebrew/Cellar",
+    "url": "https://ghcr.io/v2/homebrew/core/gcc/blobs/sha256:2a23accb457b670c90e18d36bfbcfb212c7d0292a300881436a45630d64ed608",
+    "sha256": "2a23accb457b670c90e18d36bfbcfb212c7d0292a300881436a45630d64ed608"
+  },
+  "license": "GPL-3.0-or-later WITH GCC-exception-3.1"
+}

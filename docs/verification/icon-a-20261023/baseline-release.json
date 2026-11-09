@@ -1,0 +1,24 @@
+{
+  "app": "apps/macos/dist/知识收集箱.app",
+  "source_record": "docs/verification/xiaohongshu-reader-20261023/runtime-xiaohongshu-reader.json",
+  "schema_version": 16,
+  "plugin_version": "1.0.5",
+  "manifest_sha256": "b09f9840e83a8cd19dd953017cf1f0664afa3d0fb8e86566144a1a40bffd68b3",
+  "native_binary_sha256": "0477da69bee5d4c72e2b5f63a658cf6bdf7ecf78b58a74889013ab63a9b35ec0",
+  "runtime_files": 19959,
+  "publisher_sha256": "132e3d0fe753776ec284e59accc8b85fbd7ae6fe88a311f47374e99f1f984c5a",
+  "build_script_sha256": "9dea1564073b1f04bef25916a9d0346d7eb54f0cfce09495e158d19c6f879fc2",
+  "archive": "apps/macos/archive/20261023-094831",
+  "archived_apps": [
+    "知识收集箱.app"
+  ],
+  "tests": {
+    "status": "passed; awaiting desktop exit before publication",
+    "browser": "17 passed: real Swift template; source-only layout, original offsets, collapsed comment citation, literal entities, reading restore, image click, ordinary site isolation, conservative legacy fallback",
+    "native": "Real WKWebView: AI/comment quote, unchanged raw text, same-view site switch passed; existing SearchPassageReaderTest passed repeated phrases, Markdown, entities, emoji, CRLF, list, quote, table, HTML, semantic source and stale locator guards",
+    "build": "Complete optimized source-matched app build and deep strict signature passed",
+    "runtime": "19959 files verified; backend, schema16, plugin1.0.5 and stored AI inputs unchanged",
+    "scope": "5 existing native files plus XiaohongshuReader.swift; frozen baseline preserves published reading resume and browser-image capabilities; no unrelated source changes",
+    "real_provider_calls": 0
+  }
+}

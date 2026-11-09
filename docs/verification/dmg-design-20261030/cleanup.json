@@ -1,0 +1,27 @@
+[
+  {
+    "disposition" : "moved_to_trash",
+    "path" : "apps\/macos\/dist\/Knora-0.1.0-macOS-arm64.dmg",
+    "trash_name" : "Knora-0.1.0-macOS-arm64.dmg"
+  },
+  {
+    "disposition" : "moved_to_trash",
+    "path" : "apps\/macos\/dist\/Knora-0.1.0-macOS-arm64.dmg.sha256",
+    "trash_name" : "Knora-0.1.0-macOS-arm64.dmg.sha256"
+  },
+  {
+    "disposition" : "moved_to_trash",
+    "path" : "apps\/macos\/dist\/Knora-0.1.0-macOS-arm64-r2.dmg",
+    "trash_name" : "Knora-0.1.0-macOS-arm64-r2.dmg"
+  },
+  {
+    "disposition" : "moved_to_trash",
+    "path" : "apps\/macos\/dist\/Knora-0.1.0-macOS-arm64-r2.dmg.sha256",
+    "trash_name" : "Knora-0.1.0-macOS-arm64-r2.dmg.sha256"
+  },
+  {
+    "disposition" : "moved_to_trash",
+    "path" : "apps\/macos\/.build\/dmg-design",
+    "trash_name" : "dmg-design"
+  }
+]

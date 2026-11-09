@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-01",
+  "status": "local-service-integration-verified-not-release",
+  "python_tests_passed": 112,
+  "swift_integration": "PASS: bundled Python, dynamic port, Keychain, capture, shutdown, restart persistence",
+  "runtime_entries": 19875,
+  "manifest_sha256": "e8d8fe20091a9a5f719f00097ece29b7f07a1d9e24828d7f3627b5ce62836baa",
+  "app": "apps/macos/dist/知识收集箱.app",
+  "app_outer_signature": "codesign --verify --strict passed, ad-hoc only",
+  "legacy_data_migrated": false,
+  "real_user_data_used": false
+}

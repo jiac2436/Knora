@@ -1,0 +1,23 @@
+name: 问题反馈
+description: 报告可复现的问题，请勿填写敏感资料。
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Knora / macOS 版本及芯片
+      placeholder: Knora 版本、macOS 版本、Apple Silicon
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤与预期行为
+      description: 请使用合成文字或文件；不要上传 API Key、知识库、用户配置或未脱敏日志。
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+    validations:
+      required: true

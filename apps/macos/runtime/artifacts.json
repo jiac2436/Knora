@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "target": "macos-arm64-cpython312",
+  "python": "3.12.16",
+  "uv": "0.7.6",
+  "lock_sha256": "836201aac6d789ce8027bf00b70417869dcf9773a5a4323c1289d94a6fc999b6",
+  "artifacts": [
+    {
+      "file": "python.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.12.16%2B20261026-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "sha256": "353d5f1b4fd2715e7053f12f068435d5bbad16b91e057006b5d01e0925709a7e",
+      "bytes": 25035343
+    },
+    {
+      "file": "embedding-model_optimized.onnx",
+      "url": "https://modelscope.cn/api/v1/models/Qdrant/bge-small-zh-v1.5/repo?Revision=677b527935023b31f309ecb027745526aa5f680f&FilePath=model_optimized.onnx",
+      "sha256": "1294ea4b6331115a353d81f96b85e8c8d7fdcc284453d5b2fab5b016230aad38",
+      "bytes": 94781076,
+      "install_path": "model/model_optimized.onnx"
+    },
+    {
+      "file": "embedding-tokenizer_config.json",
+      "url": "https://modelscope.cn/api/v1/models/Qdrant/bge-small-zh-v1.5/repo?Revision=677b527935023b31f309ecb027745526aa5f680f&FilePath=tokenizer_config.json",
+      "sha256": "e6f3b96db926a37d4039995fbf5ad17de158dfb8f6343d607e4dbaad18d75f5a",
+      "bytes": 367,
+      "install_path": "model/tokenizer_config.json"
+    },
+    {
+      "file": "embedding-special_tokens_map.json",
+      "url": "https://modelscope.cn/api/v1/models/Qdrant/bge-small-zh-v1.5/repo?Revision=677b527935023b31f309ecb027745526aa5f680f&FilePath=special_tokens_map.json",
+      "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+      "bytes": 125,
+      "install_path": "model/special_tokens_map.json"
+    },
+    {
+      "file": "embedding-config.json",
+      "url": "https://modelscope.cn/api/v1/models/Qdrant/bge-small-zh-v1.5/repo?Revision=677b527935023b31f309ecb027745526aa5f680f&FilePath=config.json",
+      "sha256": "9088751d39abbf86ec3d19ffca92ad62ad19075f7e59712e6c71217fa125d1d3",
+      "bytes": 739,
+      "install_path": "model/config.json"
+    },
+    {
+      "file": "embedding-tokenizer.json",
+      "url": "https://modelscope.cn/api/v1/models/Qdrant/bge-small-zh-v1.5/repo?Revision=677b527935023b31f309ecb027745526aa5f680f&FilePath=tokenizer.json",
+      "sha256": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26",
+      "bytes": 439125,
+      "install_path": "model/tokenizer.json"
+    },
+    {
+      "file": "embedding-vocab.txt",
+      "url": "https://modelscope.cn/api/v1/models/Qdrant/bge-small-zh-v1.5/repo?Revision=677b527935023b31f309ecb027745526aa5f680f&FilePath=vocab.txt",
+      "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c",
+      "bytes": 109540,
+      "install_path": "model/vocab.txt"
+    },
+    {
+      "file": "embedding-ort_config.json",
+      "url": "https://modelscope.cn/api/v1/models/Qdrant/bge-small-zh-v1.5/repo?Revision=677b527935023b31f309ecb027745526aa5f680f&FilePath=ort_config.json",
+      "sha256": "97e78d1d21c2eb719e865b018f17915df6a12ed987446eb7f3f3a783a5afb1e1",
+      "bytes": 1234,
+      "install_path": "model/ort_config.json"
+    },
+    {
+      "file": "gcc.tar.gz",
+      "url": "https://ghcr.io/v2/homebrew/core/gcc/blobs/sha256:2a23accb457b670c90e18d36bfbcfb212c7d0292a300881436a45630d64ed608",
+      "sha256": "2a23accb457b670c90e18d36bfbcfb212c7d0292a300881436a45630d64ed608",
+      "bytes": 164159961,
+      "urls": [
+        "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/gcc-16.2.0.arm64_sonoma.bottle.1.tar.gz",
+        "https://mirrors.ustc.edu.cn/homebrew-bottles/gcc-16.2.0.arm64_sonoma.bottle.1.tar.gz"
+      ]
+    },
+    {
+      "file": "ocr-det.tar",
+      "url": "https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-OCRv6_small_det_infer.tar",
+      "sha256": "bfb7c1e59f0faa6b540ebdca93aea3f4b1f2477805b389fbee117820d68fe9f5",
+      "bytes": 10055680
+    },
+    {
+      "file": "ocr-rec.tar",
+      "url": "https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-OCRv6_small_rec_infer.tar",
+      "sha256": "da460f968ce9f88325ac3a34fa302077d6e9b0dcefb16ba3137cd7796f879d06",
+      "bytes": 21442560
+    }
+  ],
+  "status": "Pinned source inputs; release requires full regression and package verification"
+}

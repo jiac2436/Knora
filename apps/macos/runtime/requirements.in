@@ -1,0 +1,28 @@
+# macOS arm64 / CPython 3.12 runtime input; all changes require compatibility regression.
+# Includes existing API, worker, OCR and MCP functionality; excludes pytest and
+# the cloud PostgreSQL driver. Transitive versions are fixed by the lock file.
+fastapi==0.140.0
+pydantic==2.11.5
+SQLAlchemy==2.0.20
+uvicorn==0.34.3
+httpx==0.28.1
+Pillow==13.0.0
+mcp==1.30.0
+# Agent configuration parser is imported directly by the bundled backend.
+tomli==2.4.1
+sse-starlette==2.4.1
+fastembed==0.9.1
+pypdfium2==5.13.0
+paddlepaddle==3.3.1
+paddleocr==3.7.0
+pdf-inspector==1.25.2
+firecrawl-anydoc==0.2.4
+# Paddle imports setuptools during CPU initialization.
+setuptools==84.1.0
+
+# Security floors fixed for this candidate; transitive versions are locked.
+starlette==1.3.1
+certifi==2026.10.18
+PyJWT==2.15.0
+aiohttp==3.14.4
+filelock==4.2.1

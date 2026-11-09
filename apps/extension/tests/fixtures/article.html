@@ -1,0 +1,37 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>下班后保存，工作时用上</title>
+<style>
+body{margin:0;background:#eceff2;color:#243248;font-family:system-ui,sans-serif}article{width:720px;margin:40px auto;background:white;border-radius:18px;overflow:hidden}.hero{padding:38px;background:#163b64;color:white}.hero h1{font-size:36px;line-height:1.3;margin:8px 0}.hero p{color:#c7dfed}.content{padding:28px 38px;line-height:1.8}h2{color:#1f6091}blockquote{border-left:4px solid #48a6b5;padding:12px 18px;background:#eef8fa;margin:20px 0}pre{padding:18px;background:#172c42;color:#daf4ee;border-radius:8px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d7e1ea;padding:9px;text-align:left}.secret{display:none}
+</style></head><body><nav>导航不应混入正文</nav><article>
+<div class="hero"><p>KNOW · 工作灵感</p><h1>下班后保存，工作时用上</h1><p>把偶然发现的经验，变成下一次解决问题的依据。</p></div>
+<div class="content"><h2 id="selection-start">从一个问题开始</h2><p>今天遇到的问题，也许已经有人分享过解决方法。保存时记录为什么有用，比只留下网址更有价值。</p><blockquote>“这个案例适合我们下一次处理接口超时的问题。”</blockquote><ul><li>保留文章的出处</li><li>记录自己的判断</li><li>让 Agent 找到适用条件</li></ul><p><a href="/reference">参考资料</a> · <a href="javascript:alert('unsafe')" onclick="alert('unsafe')">不安全链接</a></p><pre><code>const knowledge = await search("接口超时");</code></pre><table><tr><th>内容</th><th>用途</th></tr><tr><td>文章</td><td>寻找案例</td></tr></table><form><input value="DO_NOT_CAPTURE_FORM"><p>DO_NOT_CAPTURE_FORM_TEXT</p></form><p class="secret">DO_NOT_CAPTURE_HIDDEN</p><script type="application/json">{"secret":"DO_NOT_CAPTURE_SCRIPT"}</script><iframe title="嵌入文章" srcdoc="<p>内嵌内容不在普通 DOM 中</p>"></iframe><know-card></know-card><closed-card></closed-card><canvas width="10" height="10"></canvas><img alt="未加载图片" data-src="/image.png"><div id="long-content"></div></div></article>
+<script type="module">
+import { extractFromPage } from '../../dist/extractor.js';
+const host = document.querySelector('know-card');
+host.attachShadow({mode:'open'}).innerHTML = '<p>Shadow 内部文章</p>';
+document.querySelector('closed-card').attachShadow({mode:'closed'}).innerHTML = '<p>封闭内容</p>';
+for(let i=1;i<=20;i++){const p=document.createElement('p');p.textContent=`实践 ${i}：保存完整上下文，让知识在下一次工作中被检索到。`;document.querySelector('#long-content').append(p);}
+const results=[];
+function check(name,condition){results.push({name,passed:Boolean(condition)});}
+const capture=extractFromPage('page');
+check('正文 HTML 和样式快照均生成',Boolean(capture.htmlSnapshot?.html && capture.preview?.html));
+check('正文排除导航、表单、隐藏节点及脚本',!['导航不应','DO_NOT_CAPTURE_FORM','DO_NOT_CAPTURE_HIDDEN','DO_NOT_CAPTURE_SCRIPT'].some(t=>capture.htmlSnapshot.html.includes(t)||capture.text.includes(t)));
+check('脚本、事件和 javascript 链接已移除',!/<script|onclick=|javascript:/i.test(capture.htmlSnapshot.html + capture.preview.html));
+check('相对链接转为绝对链接',capture.htmlSnapshot.html.includes(new URL('/reference',location.href).href));
+check('iframe、开放和封闭组件、画布都有提示',['iframe','shadow_dom','custom_component','special_content','unloaded_images'].every(code=>capture.warnings.some(w=>w.code===code)));
+check('检测到遗漏后标记为部分内容',capture.coverage==='partial_text');
+check('标题颜色与原站样式进入预览',capture.preview.html.includes('rgb(255, 255, 255)') && capture.preview.html.includes('rgb(22, 59, 100)'));
+check('语义 HTML 保留表格和代码',capture.htmlSnapshot.html.includes('<table') && capture.htmlSnapshot.html.includes('<pre'));
+const paragraph=document.querySelector('.content > p');
+const range=document.createRange();range.selectNodeContents(paragraph);const selected=getSelection();selected.removeAllRanges();selected.addRange(range);
+const fragment=extractFromPage('selection');
+check('选区仅保留指定文字',fragment.text===paragraph.textContent && !fragment.htmlSnapshot.html.includes('实践 20'));
+selected.removeAllRanges();
+check('空选区不会误采集整页',extractFromPage('selection').htmlSnapshot===null);
+const large=document.createElement('p');large.textContent='字'.repeat(400000);document.querySelector('.content').append(large);
+const oversized=extractFromPage('page');
+check('超限 HTML 不截断成损坏文件',oversized.htmlSnapshot===null && oversized.warnings.some(w=>w.code==='html_limit'));
+check('文字截断明确标记',oversized.text.length===100000 && oversized.coverage==='partial_text' && oversized.warnings.some(w=>w.code==='text_limit'));
+large.remove();
+window.fixtureCapture=capture;window.fixtureSelection=fragment;window.fixtureResults=results;
+document.body.dataset.ready='true';
+</script></body></html>

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "popup brand image renders and header fits 410 px",
+    "passed": true
+  },
+  {
+    "name": "no test submission UI",
+    "passed": true
+  },
+  {
+    "name": "help entry present and normal save remains enabled",
+    "passed": true
+  },
+  {
+    "name": "normal save uses existing queue successfully",
+    "passed": true
+  },
+  {
+    "name": "bundled help sections cover connection collection images and offline queue",
+    "passed": true
+  },
+  {
+    "name": "first connection help expands",
+    "passed": true
+  },
+  {
+    "name": "help narrow screen has no overflow",
+    "passed": true
+  },
+  {
+    "name": "help link targets bundled options page",
+    "passed": true
+  },
+  {
+    "name": "no popup/help JavaScript errors",
+    "passed": true
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-01",
+  "status": "startup-cancellation-and-bounded-recovery-verified",
+  "python_tests_passed": 114,
+  "swift_cancel_call_seconds_less_than": 0.5,
+  "swift_cancelled_start_seconds_less_than": 3,
+  "killed_host_worker_cleanup": "passed",
+  "worker_failure_api_shutdown": "passed",
+  "swift_automatic_host_recovery": "passed",
+  "queue_and_source_count_retained": 2,
+  "restart_policy": {
+    "window_seconds": 60,
+    "maximum_attempts": 3,
+    "delays_seconds": [
+      1,
+      2,
+      4
+    ]
+  },
+  "logs": {
+    "rotation": "on-start",
+    "threshold_bytes": 5242880,
+    "archives": 3,
+    "hard_runtime_cap": false
+  },
+  "manifest_sha256": "735d2d0f85c061265661d8639fc1c4a48b60dff91daf41ec650f76a130bf3d56",
+  "real_user_data_used": false,
+  "legacy_data_migrated": false
+}

@@ -1,0 +1,18 @@
+services:
+  crawl4ai:
+    image: pka/crawl4ai:0.9.4-attrfix2
+    build:
+      context: ./crawl4ai
+    shm_size: 1gb
+    environment:
+      CRAWL4AI_API_TOKEN: ${PKA_CRAWL4AI_TOKEN:?Set PKA_CRAWL4AI_TOKEN}
+      CRAWL4AI_ALLOW_INTERNAL_URLS: "false"
+      PKA_CRAWL4AI_DOH_PROXY: ${PKA_CRAWL4AI_DOH_PROXY:-}
+
+  worker:
+    environment:
+      PKA_CRAWL4AI_URL: http://crawl4ai:11235
+      PKA_CRAWL4AI_TOKEN: ${PKA_CRAWL4AI_TOKEN:?Set PKA_CRAWL4AI_TOKEN}
+    depends_on:
+      crawl4ai:
+        condition: service_started

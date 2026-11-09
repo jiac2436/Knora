@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-01",
+  "phase": "L3 partial: client restoration and active-library switching",
+  "active_pointer_version": 1,
+  "database_migration": false,
+  "python_regression": {"passed": 166, "warnings": 1},
+  "library_store_test": "passed",
+  "swift_real_restoration_test": {
+    "script": "apps/macos/scripts/LocalRestoreTest.swift",
+    "passed": true,
+    "checks": ["isolated restored library", "historical evidence and original bytes", "queue and post-backup data isolation", "return to original library", "invalid backup reconnect", "pointer write failure reconnect", "new service/model instance loads persisted pointer", "stale operation token rejected"]
+  },
+  "runtime_manifest_sha256": "8a4ab2e4e69ed085f68dcb8088d914124c53a40a516739d4c6d0714e08464923",
+  "runtime_files_and_links": 19876,
+  "client_build": "passed",
+  "ad_hoc_outer_signature_verify": "passed",
+  "limits": ["previous-library return is session-only", "retained unactivated candidates need management", "no readable export or trash restoration yet", "no GUI recovery-dialog acceptance", "no real full-disk, interruption or power-loss acceptance", "no simultaneous multi-client library-switch acceptance", "no distribution signing acceptance"]
+}

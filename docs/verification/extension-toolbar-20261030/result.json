@@ -1,0 +1,44 @@
+{
+  "version": "0.1.2",
+  "scope": "Only toolbar action glyphs and packaging metadata; existing app/general extension/page icons unchanged",
+  "source": "Existing AppIcon.png; saturated brand rings and central white dot retained, neutral outer tile removed; 704px tight crop from 1024px artwork",
+  "sizes": [
+    16,
+    24,
+    32,
+    48
+  ],
+  "measurements": [
+    {
+      "size": 16,
+      "previousColorWidth": 10,
+      "toolbarColorWidth": 15,
+      "passed": true
+    },
+    {
+      "size": 32,
+      "previousColorWidth": 22,
+      "toolbarColorWidth": 30,
+      "passed": true
+    },
+    {
+      "size": 48,
+      "previousColorWidth": 32,
+      "toolbarColorWidth": 46,
+      "passed": true
+    }
+  ],
+  "validation": [
+    "PNG dimensions and manifest mappings passed",
+    "Permission allowlist and JavaScript syntax passed",
+    "General extension icon hashes match v0.1.1",
+    "Dark/light toolbar visual comparison reviewed; simulated actual pixel sizes, not a screenshot of the installed toolbar"
+  ],
+  "reference": "https://developer.chrome.com/docs/extensions/reference/api/action",
+  "sources": {
+    "apps/extension/manifest.json": "2f01143c1a3435a7e72162b66b64d67ada3c08180c990368fba758cc99db21ac",
+    "apps/extension/scripts/generate-icons.py": "405282c8f214b6d9b47615daf5f4ecf5cef1f401f890c0c0c5276df0a9b35750",
+    "apps/extension/scripts/GenerateToolbarIcons.swift": "8cce36b9b356e5f2ff5b9b4b833aac67d141d5fa3fb4ab7685204a41964f20a0",
+    "apps/extension/scripts/validate.mjs": "4af5f45a6336b3e5ebd050bdf276d8be1ac8b3547fc484b1ae20cf3a680d2a4c"
+  }
+}

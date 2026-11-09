@@ -1,0 +1,17 @@
+{
+  "status": "passed_with_documented_ui_limits",
+  "exit_code": 0,
+  "data": "synthetic_bindings_and_temporary_model_only",
+  "production_view": "SettingsView",
+  "source_sha256": {
+    "apps/macos/Sources/SelectControl.swift": "f7b5dd11ba0604b9fb0f72b354739ec5f9de12c77ceed170c9c12a7561ef09e2",
+    "apps/macos/scripts/SelectControlTest.swift": "e348b893593e57ddc6918b049e3fa7b44f56d4c785e4d9989692d884661f5250",
+    "/tmp/pka-select-control-test": "99103ea57ba9fa2704db877e936a4323090faa654ca16a6550ce4fef4ce0c70e"
+  },
+  "log": "docs/verification/select-controls-20261021/run.log",
+  "limits": [
+    "Not every migrated field opened individually",
+    "No physical pointer hover/wheel or VoiceOver automation"
+  ],
+  "published_by_this_test": false
+}

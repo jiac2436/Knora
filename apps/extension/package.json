@@ -1,0 +1,12 @@
+{
+  "name": "@personal-knowledge-agent/browser-extension",
+  "version": "0.1.3",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "check": "npm run build && node scripts/validate.mjs"
+  },
+  "license": "GPL-3.0-only"
+}

@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>首页 - 小红书</title>
+<style>body{font-family:system-ui}main{background:#eee;padding:20px}.note-detail-mask{position:fixed;inset:0;background:#0009;display:grid;place-items:center}.note-container{display:flex;width:800px;background:#fff}.media-container{width:400px}.note-content{padding:20px}img{width:100%}</style></head><body>
+<main><nav>背景导航不要采集</nav><article>背景帖子列表不要采集<img src="/background.png"><iframe srcdoc="背景广告"></iframe></article></main>
+<div class="note-detail-mask" hidden><div id="noteContainer" class="note-container"><div class="media-container"><img alt="当前配图" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aYZkAAAAASUVORK5CYII="></div><div><div class="author">测试作者</div><div class="note-content"><h1 id="detail-title">当前帖子标题</h1><p id="detail-desc">当前帖子的正文与话题。</p></div><div class="comments-container"><div class="total">共 8 条评论</div><div class="parent-comment"><div class="comment-item" id="root"><div class="author-wrapper"><a class="name">甘宁森森</a></div><div class="content"><span class="note-text">为什么你能生成这种风格</span></div><div class="date">3天前 福建</div><button>赞 1</button></div><div class="reply-container"><div class="comment-item" id="reply"><div class="author-wrapper"><a class="name">测试作者</a><span class="tag">作者</span></div><div class="content"><span class="note-text">模型tripo贴图banana</span></div></div></div></div><div class="comment-item" hidden><a class="name">隐藏用户</a><div class="content">隐藏评论不要读取</div></div></div><div class="interaction-container">点赞操作不要采集</div></div></div><aside class="recommend-container">弹窗外推荐不要采集</aside></div>
+<script type="module">
+import { extractFromPage } from '../../dist/extractor.js';
+import { readXiaohongshuImages } from '../../dist/image-gallery.js';
+import { createCapturePayload } from '../../dist/core.js';
+const results=[];
+const check=(name, passed)=>results.push({name,passed:Boolean(passed)});
+const mask=document.querySelector('.note-detail-mask');
+let capture=extractFromPage('page');
+check('未打开详情时不采集首页列表',capture.captureBlocked==='xiaohongshu_detail_required' && !capture.text && !capture.preview && !capture.htmlSnapshot);
+check('未打开详情时禁止生成上传载荷',(()=>{try{createCapturePayload(capture,{domainId:'work'});return false}catch{return true}})());
+mask.hidden=false;
+capture=extractFromPage('page');
+check('正确识别当前帖子',capture.site==='xiaohongshu' && capture.title==='当前帖子标题' && capture.noteContent.author==='测试作者' && capture.text.includes('当前帖子的正文'));
+check('正文和预览均不含背景、评论、推荐',!['背景导航','背景帖子','评论不要','点赞操作','弹窗外推荐'].some(t=>capture.text.includes(t)||capture.preview.html.includes(t)||capture.htmlSnapshot.html.includes(t)));
+check('背景 iframe 不触发内容遗漏警告',!capture.warnings.some(w=>w.code==='iframe'||w.code==='body_fallback'));
+check('图片仅来自当前详情',!capture.htmlSnapshot.html.includes('background.png') && capture.htmlSnapshot.html.includes('当前配图'));
+check('正文不混入作者与界面操作',capture.text==='当前帖子的正文与话题。' && capture.noteContent.body===capture.text);
+check('评论与作者回复分开识别并保留关系',capture.noteContent.comments.length===2 && capture.noteContent.comments[0].author==='甘宁森森' && capture.noteContent.comments[1].text==='模型tripo贴图banana' && capture.noteContent.comments[1].isAuthor && capture.noteContent.comments[1].parentId===capture.noteContent.comments[0].id);
+check('准确标记页面总数及已加载数量',capture.noteContent.commentTotal===8 && capture.noteContent.loadedComments===2 && capture.coverage==='partial_text');
+check('评论不包含日期点赞与隐藏文字',!JSON.stringify(capture.noteContent.comments).includes('福建') && !JSON.stringify(capture.noteContent.comments).includes('隐藏'));
+const tag=document.createElement('a');tag.className='tag';tag.href='/search_result?keyword=unity';tag.textContent='#unity';document.querySelector('#detail-desc').append(tag);
+const tagged=extractFromPage('page');
+check('标签从作者正文分离',tagged.noteContent.tags.join(',')==='unity' && tagged.noteContent.body==='当前帖子的正文与话题。');
+tag.remove();
+const hiddenSlide=document.createElement('img');hiddenSlide.hidden=true;hiddenSlide.src='/hidden-slide.png';
+document.querySelector('.media-container').append(hiddenSlide);
+check('图片列表包含隐藏轮播图且排除背景图',extractFromPage('page').imageUrls.some(url=>url.endsWith('/hidden-slide.png')) && !extractFromPage('page').imageUrls.some(url=>url.endsWith('/background.png')));
+const originalURL=location.href;
+history.replaceState(null,'','/explore/currentNote');
+window.__INITIAL_STATE__={note:{noteDetailMap:{other:{note:{noteId:'other',imageList:[{urlDefault:'https://example.com/wrong.jpg'}]}},currentNote:{note:{noteId:'currentNote',imageList:[{urlDefault:'https://example.com/one.jpg'},{infoList:[{url:'https://example.com/two.jpg'}]}]}}}}};
+const list=readXiaohongshuImages(location.href);
+check('页面数据仅匹配当前笔记，保留图片顺序',list?.total===2 && list.imageUrls.join(',')==='https://example.com/one.jpg,https://example.com/two.jpg');
+check('页面已切换时拒绝过期采集',readXiaohongshuImages(originalURL)===null);
+history.replaceState(null,'','/explore/unknownNote');
+check('不拿其他笔记或列表封面代替当前图片',readXiaohongshuImages(location.href)===null);
+history.replaceState(null,'',originalURL);
+const range=document.createRange();range.selectNodeContents(document.querySelector('#detail-desc'));getSelection().removeAllRanges();getSelection().addRange(range);
+check('支持详情内选区',extractFromPage('selection').text==='当前帖子的正文与话题。');
+range.selectNodeContents(document.querySelector('main article'));getSelection().removeAllRanges();getSelection().addRange(range);
+check('拒绝背景选区',extractFromPage('selection').captureBlocked==='xiaohongshu_selection_outside_detail');
+getSelection().removeAllRanges();mask.hidden=true;
+check('关闭详情后不会复用旧内容',extractFromPage('page').captureBlocked==='xiaohongshu_detail_required');
+mask.hidden=false;
+const direct=document.querySelector('#noteContainer');
+mask.replaceWith(direct);
+check('独立详情页同样只采集帖子',extractFromPage('page').text.includes('当前帖子的正文') && !extractFromPage('page').text.includes('背景帖子'));
+direct.id='changed-by-site';
+check('不认识的页面结构明确阻止整页采集',extractFromPage('page').captureBlocked==='xiaohongshu_detail_required');
+window.fixtureCapture=capture;
+window.fixtureResults=results;
+const output=document.createElement('output');output.id='results';output.textContent=JSON.stringify(results);document.body.append(output);
+document.body.dataset.ready='true';
+</script></body></html>

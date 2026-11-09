@@ -1,0 +1,9 @@
+{
+  "version": "15.0.12",
+  "source": "https://registry.npmjs.org/marked/-/marked-15.0.12.tgz",
+  "integrity": "sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==",
+  "file": "package/lib/marked.umd.js",
+  "javascript_sha256": "d7931d1cd7bf727dd756c871637edcc9e0f8538003b927368400ec1ee47a9dd9",
+  "license_sha256": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c",
+  "modifications": "UMD file embedded verbatim in Swift raw string; trailing newline normalized"
+}

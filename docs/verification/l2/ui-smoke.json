@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-01",
+  "status": "local-note-ui-smoke-verified",
+  "system": "26.2",
+  "architecture": "arm64",
+  "views": "production WorkspaceView and CaptureModel via isolated test app",
+  "runtime_manifest_sha256": "735d2d0f85c061265661d8639fc1c4a48b60dff91daf41ec650f76a130bf3d56",
+  "fresh_local_start_without_login": true,
+  "domain_created_in_ui": true,
+  "pending_note_and_unqueued_draft_restored": true,
+  "selected_domain_restored": true,
+  "sources_before_manual_send_after_restart": 0,
+  "sources_after_manual_send": 2,
+  "sources_after_second_restart": 2,
+  "saved_note_body_readable": true,
+  "saved_queue_restored": true,
+  "local_account_exposes_development_token": false,
+  "local_ocr_menu_models": [
+    "small"
+  ],
+  "exit_releases_instance_and_service_locks": true,
+  "sqlite_integrity_check": "ok",
+  "real_user_data_used": false,
+  "legacy_data_migrated": false,
+  "file_upload_ui_tested": false,
+  "physical_sleep_tested": false,
+  "physical_disk_full_tested": false,
+  "long_running_load_tested": false,
+  "evidence": [
+    "ui-restored.txt",
+    "ui-reader.txt",
+    "ui-account.txt",
+    "ui-pdf-model.txt",
+    "ui-saved-restart.txt",
+    "ui-queue-saved-restart.txt",
+    "ui-reader.jpg",
+    "ui-queue-saved-restart.jpg"
+  ],
+  "test_keychain_entry_deleted": true,
+  "temporary_app_and_data_removed": true
+}

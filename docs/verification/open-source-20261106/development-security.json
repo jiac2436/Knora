@@ -1,0 +1,27 @@
+[
+  {
+    "name": "psycopg",
+    "version": "3.2.10",
+    "advisories": []
+  },
+  {
+    "name": "psycopg-binary",
+    "version": "3.2.10",
+    "advisories": []
+  },
+  {
+    "name": "pytest",
+    "version": "9.0.3",
+    "advisories": []
+  },
+  {
+    "name": "pluggy",
+    "version": "1.6.0",
+    "advisories": []
+  },
+  {
+    "name": "iniconfig",
+    "version": "2.3.0",
+    "advisories": []
+  }
+]

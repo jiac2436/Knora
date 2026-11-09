@@ -1,0 +1,13 @@
+{
+  "equal_manifests": true,
+  "manifest_sha256": "deaf913297ab56ff14926a94f4239af6d23aeb5bd0e78c6ea44538632c2fba28",
+  "files_and_links": 19870,
+  "dependency_count": 100,
+  "backend_module_count": 23,
+  "payload_file_bytes": 1095282816,
+  "method": "two offline builds from pinned input archives and hash-locked wheels using same uv version; includes content hashes, modes, symlinks and build script hashes",
+  "limits": [
+    "not verified across different OS versions or toolchains",
+    "clean device and distribution signing not validated"
+  ]
+}

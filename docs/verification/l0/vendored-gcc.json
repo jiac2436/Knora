@@ -1,0 +1,18 @@
+{
+  "source_sha256": {
+    "libgfortran.5.dylib": "5c07d4dcebcf03c43e836e12fda303581e445967d0f56367d680b3c89d311bda",
+    "libgomp.1.dylib": "7169e134d3985849cc4cca17608e6d1fd6f02079de08448e1afc5ca73b69ba77",
+    "libquadmath.0.dylib": "e91c2d5dc5de67c5310269cf4fa0883026a2cc29cde304435a41e80639b85d70",
+    "libgcc_s.1.1.dylib": "819a2e431eca8461554ee335541341a5030f79c004d335b3618fd311c85bef72"
+  },
+  "changed_and_adhoc_signed": [
+    "liblapack.dylib",
+    "libgfortran.5.dylib",
+    "libblas.dylib",
+    "libquadmath.0.dylib",
+    "libgcc_s.1.1.dylib",
+    "libgcc_s.1.dylib",
+    "libgomp.1.dylib"
+  ],
+  "scope": "arm64 L0 experiment; distribution signing and license delivery pending"
+}

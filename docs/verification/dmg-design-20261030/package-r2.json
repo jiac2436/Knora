@@ -1,0 +1,24 @@
+{
+  "dmg": "apps/macos/dist/Knora-0.1.0-macOS-arm64-r2.dmg",
+  "bytes": 42780016,
+  "sha256": "4f0d921b40073236e199ddd928054451e9d6a6171d3d79ee29c8d21f44ef0378",
+  "version": "0.1.0",
+  "architecture": "arm64",
+  "minimum_macos": "14.5",
+  "signature": "ad-hoc",
+  "notarized": false,
+  "runtime_manifest_sha256": "24061175fca668eb7edd76fec76131010ba124fa44bdc95ed768b51c1108a028",
+  "native_binary_sha256": "53f6e955ac9c9354ec6227f0bf10f85ea8f3b35c39a4882f32c38fb8d1b0fb9c",
+  "checks": "Finder layout/background, two visible items without README, image verification, read-only mount, signature, runtime, complete file/mode comparison, copy-install",
+  "installer_layout": {
+    "window": [
+      680,
+      420
+    ],
+    "icon_size": 128,
+    "retina_background": true,
+    "readme_included": false
+  },
+  "source_application": "/Applications/Knora.app",
+  "optional_extensions_included": false
+}

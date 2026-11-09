@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knora · 使用说明</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons/icon-32.png" type="image/png">
+  </head>
+  <body>
+    <main class="help-shell">
+      <header class="help-brand">
+        <img src="icons/icon-128.png" width="44" height="44" alt="">
+        <div><p class="eyebrow">知径 · Knora</p><h1>使用说明</h1></div>
+      </header>
+      <p class="help-intro">把当前网页、选中的文字和可获取的图片，保存到电脑上的 Knora 知识库。</p>
+      <p><a href="options.html">打开本地连接设置 →</a></p>
+
+      <h2>快速开始</h2>
+      <ol>
+        <li><strong>打开 Knora</strong><br>在 App 中准备好要保存到的知识域。插件会自动尝试连接本地 App，无需绑定账户或填写 Token。首次使用需先安装本地连接组件，见下方常见问题。</li>
+        <li><strong>打开网页，点击插件图标</strong><br>插件会尝试读取当前页面。可点击“读取页面正文”重新采集；只想保存某一段时，先在网页中选中文字，再点击“读取选中片段”。找不到插件图标时，可在浏览器扩展菜单中将它固定到工具栏。</li>
+        <li><strong>核对预览和保存位置</strong><br>切换“网页缩影”或“保存文字”检查内容，留意感叹号提示。选择知识域，可按需关联项目、填写保存原因和个人备注。</li>
+        <li><strong>点击“保存到知识库”</strong><br>内容先进入插件的本机队列，再同步到本地 App。下方“同步状态”显示进度；看到“本地知识库已保存”才表示后台已接收。图片随后在 App 中下载，文字保存成功不代表图片已全部下载完成。</li>
+      </ol>
+
+      <h2>保存小红书帖子</h2>
+      <section class="notice" aria-label="小红书采集说明">
+        <p><strong>先点击帖子，打开详情，再采集。</strong>未打开详情时不会保存底下的推荐列表。切换帖子后请重新读取，避免保存上一条内容。</p>
+        <p>在“保存文字”下方，取消不需要的标题、作者、正文、标签或评论分类；只会提交勾选的文字分区。图片列表可点击箭头或使用键盘 ← → 切换，长图可上下滚动。</p>
+        <p>评论只包含页面已加载的部分，不保证覆盖全部评论。整页保存时会一并提交当前读取到的 HTTP(S) 图片链接，由 App 下载归档；文字分类勾选不控制图片。选中片段不会附带整页图片。</p>
+      </section>
+
+      <h2>常见问题</h2>
+      <details>
+        <summary>第一次连接不上 App，怎么办？</summary>
+        <p>先确认 App 已打开，再到<a href="options.html">连接设置</a>重试。如果提示缺少本地连接组件，当前开发版需要在项目根目录运行：</p>
+        <p><code>python3 apps/extension/scripts/install-native-bridge.py</code></p>
+        <p>该命令为 Chrome / Edge 注册本机连接组件，依赖项目中的正式 App。之后在浏览器扩展管理页重新加载插件，再打开插件。移动 App 或插件目录后，也需要重新配置。普通网页不能替你安装本地组件。</p>
+      </details>
+      <details>
+        <summary>App 关闭时，还能保存吗？</summary>
+        <p>完成过首次连接、且已缓存目标知识域时，可以先保存到插件本机队列；App 启动后会自动重试同步。首次尚未连接成功时，需要先启动 App，确认要写入的知识库。</p>
+        <p>队列按知识库隔离，切换 App 中的知识库不会把原队列写入另一个库。若要清理浏览器数据或卸载插件，请先确认待同步内容已经保存到 App。</p>
+      </details>
+      <details>
+        <summary>按钮是灰色的，或者提示重新加载插件？</summary>
+        <p>先完成本地连接，再打开可采集的网页。小红书需要打开帖子详情；文字分类不能全部取消。保存时还需要选择知识域。</p>
+        <p>更新插件后，浏览器可能仍使用旧后台或旧权限。按提示重新加载插件，并接受浏览器的权限确认，然后重新打开插件。</p>
+      </details>
+      <details>
+        <summary>为什么正文、评论或图片不完整？</summary>
+        <p>插件采集页面当前可访问的内容。尚未加载、虚拟滚动已移除、嵌入页面或特殊组件中的内容可能无法读取；可滚动加载后重新采集，或使用“读取选中片段”。飞书完整文档可改在 App 中通过已授权的飞书 CLI 获取。</p>
+        <p>图片归档支持公开 HTTP(S) 链接，不复制浏览器 Cookie；需要登录、已过期、防盗链或 blob/data 图片可能无法保存。请在 App 中查看图片状态，失败时可重试。</p>
+      </details>
+      <details>
+        <summary>同步失败后怎么办？</summary>
+        <p>先打开 App，确认本地连接正常，再点击“同步状态”旁的“重试”。失败条目会保留在本机队列；尚在队列中的内容不等于已保存到 App。</p>
+      </details>
+      <p class="help-footer">本插件不收集浏览历史，不提交浏览器 Cookie。采集内容先保存在本机队列，再同步到本地 App；后续 AI 处理沿用 App 中的配置。</p>
+    </main>
+  </body>
+</html>

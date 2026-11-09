@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>保存到 Knora</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons/icon-32.png" type="image/png">
+  </head>
+  <body class="popup-body">
+    <header class="topbar">
+      <div class="brand-heading">
+        <img class="brand-icon" src="icons/icon-48.png" width="32" height="32" alt="">
+        <div class="brand-copy">
+          <p class="eyebrow">知径 · Knora</p>
+          <strong id="account-name">正在连接本地 App…</strong>
+        </div>
+      </div>
+      <nav class="topbar-actions" aria-label="插件帮助与设置">
+        <a class="icon-button" id="help" href="help.html" target="_blank" rel="noopener">使用说明</a>
+        <button id="settings" class="icon-button" type="button" aria-label="打开设置">设置</button>
+      </nav>
+    </header>
+
+    <main>
+      <div id="capture-site" class="capture-site" hidden>
+        <img src="xiaohongshu.svg" width="56" height="24" alt="小红书">
+        <span>帖子详情采集</span>
+      </div>
+      <p id="local-connection-status" class="preview-note" role="status"></p>
+      <p id="status" class="status" role="status"></p>
+      <button id="connect" class="primary full" type="button" hidden>启动本地 App 并连接</button>
+
+      <section id="capture-panel" hidden>
+        <div class="segmented" aria-label="采集方式">
+          <button id="capture-page" type="button">读取页面正文</button>
+          <button id="capture-selection" type="button">读取选中片段</button>
+        </div>
+
+        <section class="preview" aria-labelledby="preview-heading">
+          <p id="preview-empty" class="muted">尚未读取页面</p>
+          <div id="preview-content" hidden>
+            <p class="eyebrow" id="preview-heading">保存预览</p>
+            <h1 id="preview-title"></h1>
+            <p id="preview-url" class="url"></p>
+            <div id="preview-mode" class="preview-mode" aria-label="预览显示方式" hidden>
+              <button id="preview-snapshot" type="button" aria-pressed="true">网页缩影</button>
+              <button id="preview-plain" type="button" aria-pressed="false">保存文字</button>
+              <button id="preview-images" type="button" aria-pressed="false" hidden>图片列表</button>
+            </div>
+            <div id="content-sections" class="content-sections" role="group" aria-label="选择保存的内容" hidden></div>
+            <div id="preview-viewport" class="preview-viewport">
+              <iframe id="preview-frame" class="preview-frame" title="采集区域的静态网页预览" sandbox="" referrerpolicy="no-referrer" hidden></iframe>
+              <div id="image-gallery" class="image-gallery" role="region" aria-label="帖子图片，使用左右方向键切换" tabindex="0" hidden>
+                <div class="image-gallery-scroll"></div>
+                <span class="image-gallery-counter" aria-live="polite">0/0</span>
+                <button class="image-gallery-previous" type="button" aria-label="上一张图片">‹</button>
+                <button class="image-gallery-next" type="button" aria-label="下一张图片">›</button>
+                <p class="image-gallery-status" role="status"></p>
+              </div>
+              <p id="preview-text" class="preview-text" tabindex="0" aria-label="本次保存的完整文字"></p>
+            </div>
+            <p id="preview-note" class="preview-note"></p>
+            <div id="capture-warnings" class="capture-warnings" hidden></div>
+            <p id="preview-meta" class="muted"></p>
+          </div>
+        </section>
+
+        <label>
+          知识域 <span aria-hidden="true">*</span>
+          <select id="domain" required></select>
+        </label>
+        <label>
+          关联项目
+          <select id="project"></select>
+        </label>
+        <label>
+          为什么保存
+          <input id="save-reason" type="text" maxlength="500" placeholder="例如：给商品管理页参考">
+        </label>
+        <label>
+          个人备注
+          <textarea id="note" rows="3" placeholder="补充适用条件、限制或自己的判断"></textarea>
+        </label>
+        <button id="save" class="primary full" type="button">保存到知识库</button>
+      </section>
+
+      <section class="sync-card" aria-labelledby="sync-heading">
+        <div class="section-heading">
+          <h2 id="sync-heading">同步状态</h2>
+          <button id="retry" class="link-button" type="button" hidden>重试</button>
+        </div>
+        <div id="queue-list" class="queue-list">正在读取…</div>
+      </section>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

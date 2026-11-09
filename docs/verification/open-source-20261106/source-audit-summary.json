@@ -1,0 +1,14 @@
+{
+  "checked_on": "2026-11-06",
+  "scanner": "gitleaks 8.30.1",
+  "findings": 329,
+  "classified": {
+    "synthetic_test_credential": 1,
+    "source_or_artifact_sha256": 328
+  },
+  "unresolved": [],
+  "private_runtime_artifacts": [],
+  "known_private_markers": [],
+  "scope": "Reviewed working-tree source projection; excludes Git metadata and ignored build/runtime state",
+  "git_history_rewritten": false
+}

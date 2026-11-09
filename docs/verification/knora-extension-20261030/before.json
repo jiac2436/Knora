@@ -1,0 +1,22 @@
+{
+  "source_sha256": {
+    "apps/extension/manifest.json": "0dcb370450bc91bc2e41e3b2723dd3c71f439510e8a568df928f7a93326be441",
+    "apps/extension/scripts/install-native-bridge.py": "f713f9a5e18c90241944af899364b0b659e567be3810738adfae713943f6bd93",
+    "apps/extension/static/popup.html": "76b54b09ab0a13028ea2aadb1f73828b6f72116cc2483d6da81288b58dfe0c68",
+    "apps/extension/static/options.html": "cdbd3826054ec2ee8eb05027244664b943460bf81fda7ca13bd1c95994df72f3",
+    "apps/extension/static/help.html": "f552a6ee67d812bc82006e16f7c234c54e83004c23adc43dcf2588c92db77f47",
+    "services/api/app/browser_native.py": "ffa7c5848f6d73d8df7207ebf7ae04249c263651470b1963f6a9a0ef4400d903"
+  },
+  "extension_path": "apps/extension/dist",
+  "icons_sha256": {
+    "icon-128.png": "a2ab03d3a5297eebd334248da07e662d3c79c322df1a9e7b66848923340f3d51",
+    "icon-16.png": "8aec26f6641d15816ca9bc1d9597edf3eb2fb9dedfab752b159bd9d54c0bfa1a",
+    "icon-32.png": "27704b1c47368cd2feeb318f03c4fe407e60673af9adc3e2f5ef355ba92ca69e",
+    "icon-48.png": "aef2ae9120b94512bf2fa9c3d8c0ba05e5b3d487c92fb169d758830ac58e4590",
+    "toolbar-filled-16.png": "b165be3df1c1b34845f21f313739dd37df18261344e714279038ec91209ff21e",
+    "toolbar-filled-24.png": "9e5c2429604f38b659e8ece8aec6a42835b188090d4fb0819d7a009d421edfbd",
+    "toolbar-filled-32.png": "5596cb06e085a1c98c34d5e7ef2bb2c96ea31d77161e5b644c113b3601475258",
+    "toolbar-filled-48.png": "73c71475dd10263050cf8fbdb9437ac3bc532942bee6fb6d1e3684387608feb9"
+  },
+  "app_sha256": "6c40e8ef27df3b41a274ef0e2a19b5a4013972c18b03575c1f3164b8c3ec9691"
+}

@@ -1,0 +1,6 @@
+-r requirements.txt
+pypdfium2>=5.13,<6
+paddlepaddle>=3.3,<4
+paddleocr>=3.6,<4
+pdf-inspector>=1.25,<2
+firecrawl-anydoc==0.2.4

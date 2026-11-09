@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "base": ["fastapi", "pydantic", "SQLAlchemy", "uvicorn", "httpx", "Pillow", "mcp", "sse-starlette", "pypdfium2", "tomli"],
+  "semantic": ["fastembed"],
+  "ocr": ["paddlepaddle", "paddleocr", "setuptools"],
+  "documents": ["pdf-inspector", "firecrawl-anydoc"]
+}

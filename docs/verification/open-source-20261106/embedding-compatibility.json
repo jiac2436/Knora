@@ -1,0 +1,8 @@
+{
+  "old": "0.7.4",
+  "new": "0.9.1",
+  "synthetic_sentences": 3,
+  "max_absolute_difference": 0.0,
+  "minimum_cosine": 1.0,
+  "scope": "Same pinned BGE/tokenizer files; synthetic vector-space compatibility only"
+}

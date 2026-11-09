@@ -1,0 +1,19 @@
+{
+  "native_files": 304,
+  "external_absolute_load_paths": {
+    "lib/python3.10/site-packages/paddle/libs/liblapack.dylib": [
+      "/opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib",
+      "/opt/homebrew/opt/gcc/lib/gcc/current/libgomp.1.dylib",
+      "/opt/homebrew/opt/gcc/lib/gcc/current/libquadmath.0.dylib"
+    ],
+    "lib/python3.10/site-packages/paddle/libs/libblas.dylib": [
+      "/opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib",
+      "/opt/homebrew/opt/gcc/lib/gcc/current/libgomp.1.dylib",
+      "/opt/homebrew/opt/gcc/lib/gcc/current/libquadmath.0.dylib"
+    ]
+  },
+  "bytes_excluding_symlinks": 994921112,
+  "limits": [
+    "LC_ID_DYLIB excluded; @rpath resolution and signing not verified"
+  ]
+}

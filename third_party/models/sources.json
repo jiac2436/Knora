@@ -1,0 +1,8 @@
+{
+  "model": "BAAI/bge-small-zh-v1.5",
+  "model_card": "https://huggingface.co/BAAI/bge-small-zh-v1.5",
+  "license_source": "https://raw.githubusercontent.com/FlagOpen/FlagEmbedding/master/LICENSE",
+  "license_sha256": "587a673933425dbc36ec61268d3b954051b2d3ef3c9b322ede357976055ffdd5",
+  "license": "MIT",
+  "scope": "Upstream FlagEmbedding license linked by model card; ONNX conversion and PP-OCR package notices also retained by the runtime inventory"
+}

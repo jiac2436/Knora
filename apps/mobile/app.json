@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "个人知识助手",
+    "slug": "personal-knowledge-agent",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.personalknowledge"
+    },
+    "android": {
+      "package": "com.example.personalknowledge"
+    }
+  }
+}

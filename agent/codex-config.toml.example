@@ -1,0 +1,17 @@
+# 将本文件中的绝对路径替换成你的仓库路径，再复制相应配置到
+# ~/.codex/config.toml 或受信任项目的 .codex/config.toml。
+# 不要把 PKA_AGENT_TOKEN 的值写进配置文件；启动 Codex 前在本机环境中设置。
+
+[mcp_servers.personal_knowledge]
+command = "/absolute/path/to/personal-knowledge-agent/.venv/bin/python"
+args = ["-m", "app.mcp_server"]
+cwd = "/absolute/path/to/personal-knowledge-agent"
+env_vars = ["PKA_AGENT_TOKEN", "PKA_DATABASE_URL"]
+enabled_tools = ["search_knowledge", "get_evidence", "get_source"]
+default_tools_approval_mode = "auto"
+startup_timeout_sec = 10
+tool_timeout_sec = 30
+
+[mcp_servers.personal_knowledge.env]
+PYTHONPATH = "services/api"
+

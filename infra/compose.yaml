@@ -1,0 +1,62 @@
+services:
+  database:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: pka
+      POSTGRES_USER: pka
+      POSTGRES_PASSWORD: pka
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pka"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    volumes:
+      - pka-postgres:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.api
+    environment:
+      PKA_ENVIRONMENT: ${PKA_ENVIRONMENT:-development}
+      PKA_DATABASE_URL: ${PKA_DATABASE_URL:-postgresql+psycopg://pka:pka@database:5432/pka}
+      PKA_MAX_CAPTURE_CHARS: ${PKA_MAX_CAPTURE_CHARS:-102400}
+      PKA_UPLOAD_DIR: /data/uploads
+      PKA_EVIDENCE_SNIPPET_CHARS: ${PKA_EVIDENCE_SNIPPET_CHARS:-1200}
+      PKA_SEMANTIC_CACHE_DIR: /data/embedding-models
+      PKA_SMTP_HOST: ${PKA_SMTP_HOST:-}
+      PKA_SMTP_PORT: ${PKA_SMTP_PORT:-587}
+      PKA_SMTP_USER: ${PKA_SMTP_USER:-}
+      PKA_SMTP_PASSWORD: ${PKA_SMTP_PASSWORD:-}
+      PKA_SMTP_FROM: ${PKA_SMTP_FROM:-}
+    ports:
+      - "8000:8000"
+    volumes:
+      - pka-uploads:/data/uploads
+      - pka-embedding-models:/data/embedding-models
+    depends_on:
+      database:
+        condition: service_healthy
+
+  worker:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.worker
+    environment:
+      PKA_UPLOAD_DIR: /data/uploads
+      PKA_ENVIRONMENT: ${PKA_ENVIRONMENT:-development}
+      PKA_DATABASE_URL: ${PKA_DATABASE_URL:-postgresql+psycopg://pka:pka@database:5432/pka}
+      PKA_SEMANTIC_CACHE_DIR: /data/embedding-models
+    volumes:
+      - pka-uploads:/data/uploads
+      - pka-ocr-models:/root/.paddlex
+      - pka-embedding-models:/data/embedding-models
+    depends_on:
+      database:
+        condition: service_healthy
+
+volumes:
+  pka-uploads:
+  pka-postgres:
+  pka-ocr-models:
+  pka-embedding-models:

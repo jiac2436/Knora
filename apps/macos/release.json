@@ -1,0 +1,21 @@
+{
+  "app": "apps/macos/dist/Knora.app",
+  "source_record": "docs/verification/about-20261030/runtime-about.json",
+  "schema_version": 16,
+  "plugin_version": "1.0.5",
+  "manifest_sha256": "24061175fca668eb7edd76fec76131010ba124fa44bdc95ed768b51c1108a028",
+  "native_binary_sha256": "53f6e955ac9c9354ec6227f0bf10f85ea8f3b35c39a4882f32c38fb8d1b0fb9c",
+  "runtime_files": 3022,
+  "publisher_sha256": "da69b38984f39ce7b6d5e13102c36d234a8f5028f9f52f69523f864f36a29368",
+  "build_script_sha256": "8050ccc1f4b9b8966c65716131eb828db526db225905de49af018188a1e4c8df",
+  "archive": "apps/macos/archive/20261030-230559",
+  "archived_apps": [
+    "Knora.app"
+  ],
+  "tests": {
+    "status": "passed",
+    "native_ui": "Real SettingsView: About is the final sidebar item; native click renders brand, bundle version and short description; existing settings page round-trip and screenshot verified using synthetic local state",
+    "build": "Complete optimized native build, strict signature, unchanged icon and all 3022 runtime entries verified",
+    "scope": "Only Workspace settings routing and new AboutView changed; backend, configuration, credential paths and user data unchanged. No service startup or model/provider calls."
+  }
+}
