@@ -17,7 +17,7 @@
 
 当前桌面客户端面向 **Apple Silicon、macOS 14.5+**。Intel、Windows、Linux 和移动端尚未完成产品发行验收。仓库中的移动端与 Docker 配置保留为历史开发参考，不属于当前桌面发行支持范围，也不是使用 macOS 客户端的前提。
 
-首次公开发行尚在准备，暂不提供未经核验的下载链接。发布安装包后，将 DMG 中的 `Knora.app` 拖入 `Applications`，复制完成后从“应用程序”启动。当前本地测试包使用 ad-hoc 签名，未做 Apple 公证；这不等于已经通过跨设备安装验证。安装和发行步骤见 [打包说明](apps/macos/PACKAGING.md)。
+下载入口：[Knora 0.2.0 公开测试版](https://github.com/jiac2436/Knora/releases/tag/v0.2.0)。选择 `Knora-0.2.0-macOS-arm64.dmg`，将其中的 `Knora.app` 拖入 `Applications`，复制完成后从“应用程序”启动。当前测试版使用 ad-hoc 签名，未做 Apple 公证；跨设备和最低系统实机验证仍有限。安装和发行步骤见 [打包说明](apps/macos/PACKAGING.md)。
 
 客户端自带本机 Python、API、Worker 和 SQLite，**不用登录，不需要另启服务器、数据库、Docker 或 AI 网关**。设置中填写模型服务配置后即可使用云端 AI；未配置模型时仍可收集、阅读和精确搜索。
 
